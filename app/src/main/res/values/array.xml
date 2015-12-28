@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_tabs">
+        <item>推荐</item>
+        <item>应用</item>
+        <item>游戏</item>
+    </string-array>
+</resources>

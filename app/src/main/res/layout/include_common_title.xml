@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="61dp"
+    android:layout_width="match_parent"
+    android:paddingTop="10dp">
+    <ImageView
+        android:id="@+id/common_title_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blue_menu"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"/>
+    <ImageView
+        android:id="@+id/common_title_download_icon"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:src="@drawable/blue_download"/>
+    <TextView
+        android:id="@+id/count_text_view"
+        android:layout_alignRight="@+id/common_title_download_icon"
+        android:layout_alignTop="@+id/common_title_download_icon"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:textSize="11sp"
+        android:background="@drawable/count_shape"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:layout_toRightOf="@+id/common_title_menu"
+        android:layout_toLeftOf="@+id/common_title_download_icon"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_title_search"
+        android:layout_width="match_parent"
+        android:layout_height="37dp" >
+        <ImageView
+            android:layout_toLeftOf="@+id/hint_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_title_search"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:id="@+id/hint_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜素应用和游戏"
+            android:textSize="14sp"
+            android:textColor="#8a8a8a"
+            android:gravity="center"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
