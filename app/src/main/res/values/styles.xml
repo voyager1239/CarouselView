@@ -39,4 +39,23 @@
     <style name="GameTabSelStyle" parent="@style/MainPopupTitleTabSelStyle">
         <item name="android:text">游戏</item>
     </style>
+
+    <!-- common icon style -->
+    <style name="IconDraweeStyle">
+        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_width">65dp</item>
+        <item name="actualImageScaleType">focusCrop</item>
+        <item name="backgroundImage">@drawable/common_icon_background</item>
+        <item name="fadeDuration">1000</item>
+        <item name="failureImage">@drawable/default_icon</item>
+        <item name="failureImageScaleType">centerInside</item>
+        <item name="overlayImage">@null</item>
+        <item name="placeholderImage">@drawable/default_icon</item>
+        <item name="placeholderImageScaleType">fitCenter</item>
+        <item name="roundBottomLeft">true</item>
+        <item name="roundBottomRight">true</item>
+        <item name="roundTopLeft">true</item>
+        <item name="roundTopRight">true</item>
+        <item name="roundedCornerRadius">12dp</item>
+    </style>
 </resources>

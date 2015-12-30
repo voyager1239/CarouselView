@@ -52,7 +52,7 @@
             android:id="@+id/hint_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="搜素应用和游戏"
+            android:text="搜索应用和游戏"
             android:textSize="14sp"
             android:textColor="#8a8a8a"
             android:gravity="center"

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+
 import com.sogou.carouselview.fragment.*;
 
 public class MainActivity extends FragmentActivity {
@@ -30,9 +31,10 @@ public class MainActivity extends FragmentActivity {
     private LayoutInflater mInflater;
     private MyFragmentPagerAdapter mAdapter;
     private SyncHorizontalScrollView horizontalScrollView;
-    public static String[] tab_title = {"选项1","选项2","选项3","选项4","选项5","选项6","选项7","选项8"};
+    public static String[] tab_title = {"选项1", "选项2", "选项3", "选项4", "选项5", "选项6", "选项7", "选项8"};
     private int indicatorWidth;
     private int currentIndicatorLeft = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,20 +43,20 @@ public class MainActivity extends FragmentActivity {
         initView();
     }
 
-    private void initWidget(){
+    private void initWidget() {
         scroll_tab = (RelativeLayout) findViewById(R.id.scroll_tab);
         radioGroup_content = (RadioGroup) findViewById(R.id.rg_content);
         iv_indicator = (ImageView) findViewById(R.id.iv_indicator);
         iv_left = (ImageView) findViewById(R.id.iv_nav_left);
         iv_right = (ImageView) findViewById(R.id.iv_nav_right);
         mPager = (ViewPager) findViewById(R.id.pager);
-        horizontalScrollView = (SyncHorizontalScrollView)findViewById(R.id.mHsv);
+        horizontalScrollView = (SyncHorizontalScrollView) findViewById(R.id.mHsv);
     }
 
-    private void initView(){
+    private void initView() {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        indicatorWidth = dm.widthPixels/4;
+        indicatorWidth = dm.widthPixels / 4;
         ViewGroup.LayoutParams cursor_Params = iv_indicator.getLayoutParams();
         cursor_Params.width = indicatorWidth;
         iv_indicator.setLayoutParams(cursor_Params);
@@ -87,7 +89,6 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (radioGroup_content.getChildAt(checkedId) != null) {
-                    Log.d("-------Test-------", checkedId + "");
                     TranslateAnimation animation = new TranslateAnimation(
                             currentIndicatorLeft,
                             ((RadioButton) radioGroup_content.getChildAt(checkedId)).getLeft(), 0f, 0f);
@@ -111,10 +112,10 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-    private void initHorizontalScrollView(){
+    private void initHorizontalScrollView() {
         radioGroup_content.removeAllViews();
-        for (int i = 0;i<tab_title.length;i++){
-            RadioButton radioButton = (RadioButton)mInflater.inflate(R.layout.radiogroup_item,null);
+        for (int i = 0; i < tab_title.length; i++) {
+            RadioButton radioButton = (RadioButton) mInflater.inflate(R.layout.radiogroup_item, null);
             radioButton.setId(i);
             radioButton.setText(tab_title[i]);
             radioButton.setLayoutParams(new ActionBar.LayoutParams(indicatorWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -122,15 +123,15 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-   public static class MyFragmentPagerAdapter extends FragmentStatePagerAdapter{
-        public MyFragmentPagerAdapter(FragmentManager fm){
+    public static class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
+        public MyFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
             Fragment fg = null;
-            switch (position){
+            switch (position) {
                 case 0:
                     fg = new Fragment1();
                     break;
