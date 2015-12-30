@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
     private LayoutInflater mInflater;
     private MyFragmentPagerAdapter mAdapter;
     private SyncHorizontalScrollView horizontalScrollView;
-    public static String[] tab_title = {"选项1", "选项2", "选项3", "选项4", "选项5", "选项6", "选项7", "选项8"};
+    public static String[] tab_title = {"选项1", "选项2", "选项3", "选项4", "选项5", "选项6", "选项7", "选项8","选项9"};
     private int indicatorWidth;
     private int currentIndicatorLeft = 0;
 
