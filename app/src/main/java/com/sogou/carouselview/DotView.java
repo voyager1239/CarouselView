@@ -16,7 +16,7 @@ public class DotView extends LinearLayout implements View.OnClickListener {
     }
 
     private int mLittleDotSize = -2;
-    private int mDotSpan = 50;
+    private int mDotSpan = 52;
     private float mDotRadius = 12f;
 
     private int mCurrent = 0;
