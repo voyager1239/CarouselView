@@ -16,6 +16,13 @@
 
     <color name="download_count_bg">#ff4e49</color>
 
+    <color name="white_dark">#f3f3f3</color>
+    <color name="gray_light">#cccccc</color>
+    <color name="gray_dark">#383838</color>
+    <color name="green_light">#8e9ea4</color>
+    <!--<color name="green">#34515c</color>-->
+    <color name="green_dark">#1e3e4a</color>
+    <color name="night_mask">#90000000</color>
     <!-- Text colors -->
     <color name="hint_text_search_color">#8a8a8a</color>
     <color name="tab_indicator_text_color">#999999</color>

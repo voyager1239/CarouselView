@@ -6,4 +6,9 @@
         <attr name="dot_unselected_color" format="color" />
         <attr name="dot_selected_color" format="color" />
     </declare-styleable>
+
+    <attr name="btnColor" format="color" />
+    <attr name="mainBackground" format="color" />
+    <attr name="mainTextColor" format="reference|color" />
+    <attr name="textString" format="string" />
 </resources>

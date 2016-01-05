@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.sogou.carouselview"
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -32,4 +32,5 @@ dependencies {
     compile files('build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp/0.5.1/jars/classes.jar')
     compile 'com.facebook.fresco:fresco:0.6.0+'
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.2'
+    compile project(':slidinglibrary')
 }

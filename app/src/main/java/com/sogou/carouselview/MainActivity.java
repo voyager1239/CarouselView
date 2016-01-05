@@ -3,13 +3,12 @@ package com.sogou.carouselview;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
@@ -18,9 +17,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
-import com.sogou.carouselview.fragment.*;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.sogou.carouselview.fragment.Fragment1;
+import com.sogou.carouselview.fragment.Fragment2;
+import com.sogou.carouselview.fragment.MenuLeftFragment;
+import com.sogou.carouselview.fragment.MenuRightFragment;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends SlidingFragmentActivity {
 
     private RelativeLayout scroll_tab;
     private RadioGroup radioGroup_content;
@@ -36,12 +40,14 @@ public class MainActivity extends FragmentActivity {
     private int currentIndicatorLeft = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initWidget();
+        initSlidingMenu();
         initView();
     }
+
 
     private void initWidget() {
         scroll_tab = (RelativeLayout) findViewById(R.id.scroll_tab);
@@ -51,6 +57,32 @@ public class MainActivity extends FragmentActivity {
         iv_right = (ImageView) findViewById(R.id.iv_nav_right);
         mPager = (ViewPager) findViewById(R.id.pager);
         horizontalScrollView = (SyncHorizontalScrollView) findViewById(R.id.mHsv);
+    }
+
+    private void initSlidingMenu(){
+        Fragment leftMenuFragment = new MenuLeftFragment();
+        //设置侧滑菜单的布局
+        setBehindContentView(R.layout.left_menu_frame);
+        //将id_left_menu_frame代表的布局作为Fragment的容器
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.id_left_menu_frame, leftMenuFragment).commit();
+        SlidingMenu menu = getSlidingMenu();
+        menu.setMode(SlidingMenu.LEFT_RIGHT);
+        //设置SlidingMenu的触摸模式
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        menu.setShadowWidthRes(R.dimen.shadow_width);
+        menu.setShadowDrawable(R.drawable.shadow);
+        // 设置滑动菜单视图的宽度
+        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+//		menu.setBehindWidth()
+        // 设置渐入渐出效果的值
+        menu.setFadeDegree(0.35f);
+        // menu.setBehindScrollScale(1.0f);
+        menu.setSecondaryShadowDrawable(R.drawable.shadow);
+        menu.setSecondaryMenu(R.layout.right_menu_frame);
+        Fragment rightMenuFragment = new MenuRightFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
     }
 
     private void initView() {
@@ -147,5 +179,15 @@ public class MainActivity extends FragmentActivity {
         public int getCount() {
             return tab_title.length;
         }
+    }
+
+    public void showLeftMenu(View view)
+    {
+        getSlidingMenu().showMenu();
+    }
+
+    public void showRightMenu(View view)
+    {
+        getSlidingMenu().showSecondaryMenu();
     }
 }

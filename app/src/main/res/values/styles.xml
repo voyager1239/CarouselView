@@ -58,4 +58,20 @@
         <item name="roundTopRight">true</item>
         <item name="roundedCornerRadius">12dp</item>
     </style>
+
+    <!-- 默认 -->
+    <style name="MyThemeDefault" parent="@android:style/Theme">
+        <item name="btnColor">#00ff00</item>
+        <item name="mainBackground">#ffffff</item>
+        <item name="mainTextColor">#000000</item>
+        <item name="textString">默认主题</item>
+    </style>
+
+    <!-- 夜间 -->
+    <style name="MyThemeNight" parent="@android:style/Theme">
+        <item name="btnColor">#0000ff</item>
+        <item name="mainBackground">#000000</item>
+        <item name="mainTextColor">#ffffff</item>
+        <item name="textString">夜间主题</item>
+    </style>
 </resources>
