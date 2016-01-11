@@ -13,35 +13,40 @@
         android:layout_marginTop="20dp"
         android:text="238124903012349123" />
 
-    <Button
-        android:id="@+id/bt_click"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="usdfoasjop" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <Button
+            android:id="@+id/bt_click"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="usdfoasjop" />
+    </LinearLayout>
 
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.sogou.carouselview.CarouselViewPager
+            android:id="@+id/carousel_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="199dp"
+            android:background="@drawable/card" />
 
-            <com.sogou.carouselview.CarouselViewPager
-                android:id="@+id/carousel_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="199dp"
-                android:background="@drawable/card" />
-
-            <com.sogou.carouselview.DotView
-                android:id="@+id/dot_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="180dp"
-                DotView:dot_radius="3dp"
-                DotView:dot_selected_color="#FF0000"
-                DotView:dot_span="7dp"
-                DotView:dot_unselected_color="#7FFFFFFF" />
-        </RelativeLayout>
+        <com.sogou.carouselview.DotView
+            android:id="@+id/dot_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
+            DotView:dot_radius="3dp"
+            DotView:dot_selected_color="#FF0000"
+            DotView:dot_span="7dp"
+            DotView:dot_unselected_color="#7FFFFFFF" />
+    </RelativeLayout>
 
 </LinearLayout>
